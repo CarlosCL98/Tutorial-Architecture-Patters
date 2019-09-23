@@ -1,1 +1,1 @@
-"## Tutorial Architecture Patters" 
+## Tutorial Architecture Patters
