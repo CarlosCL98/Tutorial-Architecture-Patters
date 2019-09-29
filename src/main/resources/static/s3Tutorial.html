@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>S3 Tutorial</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/s3Tutorial.html">S3 Tutorial<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ec2Tutorial.html">EC2 Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dbTutorial.html">Base de Datos Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vpcTutorial.html">VPC Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/costosServiciosAWS">Costos Servicios AWS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row" style="padding-top: 5%;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="text-align: center;">
+            <h1>S3 Tutorial</h1>
+            <br/>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <main>
+        <p>Amazon <b>Simple Storage Service (S3)</b> es un servicio de almacenamiento para Internet. Está diseñado para
+            facilitar a los desarrolladores recursos de computación escalables basados en Web. Los siguientes son los
+            pasos para poder desplegar un sitio estático usando este servicio:</p>
+        <ul>
+            <li>
+                <span>Ya con una cuenta en AWS educate, se dirige a la consola de administración de AWS (AWS Management
+                    Console).</span>
+            </li>
+            <li><span>En esa consola se busca el servicio S3 y se accede a él.</span></li>
+            <li>
+                <span>Dentro de Amazon S3, creamos un bucket para almacenar todos los objetos que se vayan creando.</span>
+            </li>
+            <li>
+                <span>Ahí llenamos los campos que permiten darle un nombre al bucket, se configuran propiedades si se desea,
+                se establecen los permisos necesarios (en este caso, para permitir el despliegue de una pagina estática,
+                    es necesario que los objetos sean públicos) y finalmente se crea el bucket.</span>
+            </li>
+            <li>
+                <span>Accedemos al bucket creado y cargamos los documentos de nuestro sitio web estático, como un index.html y
+                error.html. Aquí debemos seleccionar la clase de almacenamiento como standard, pues esto tiene que ver
+                    con el costo.</span>
+            </li>
+            <li><span>Luego de eso seleccionamos nuestros archivos y en actions seleccionamos make public.</span></li>
+            <li>
+                <span>Ahora vamos a la pestaña de propiedades y hacemos click en static website hosting para poder activar
+                nuestro servicio. Seleccionamos la opción “use this bucket to host a website” y escribimos el nombre de
+                    los documentos del index y del error. Finalmente damos click en save.</span>
+            </li>
+            <li><span>En la parte superior de esa propiedad aparece la dirección que será tendrá el hosting de nuestro sitio
+                estático, lo copiamos y lo abrimos en otra pestaña. Debería mostrarse nuestro index.</span>
+            </li>
+        </ul>
+        <p>Para un mayor entendimiento, puede ver el siguiente video tutorial:</p>
+        <div class="iframeTutorial">
+            <iframe width="700" height="393,75" src="https://www.youtube-nocookie.com/embed/VgeTZ58H0j4" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <p style="font-size: 15px;padding-top: 2.5%">Carlos Medina 2019 - Arquitectura Empresarial</p>
+</footer>
+</body>
+</html>

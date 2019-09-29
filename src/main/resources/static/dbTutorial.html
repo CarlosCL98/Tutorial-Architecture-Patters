@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>DB Tutorial</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/s3Tutorial.html">S3 Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ec2Tutorial.html">EC2 Tutorial</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/dbTutorial.html">Base de Datos Tutorial<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vpcTutorial.html">VPC Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/costosServiciosAWS">Costos Servicios AWS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row" style="padding-top: 5%;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="text-align: center;">
+            <h1>DataBase Tutorial</h1>
+            <br/>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <main>
+        <p>Amazon <b>Relational Database Service (Amazon RDS)</b>, permite de una manera sencilla configurar, utilizar y
+            escalar una base de datos relacional en la nube. El servicio suministra capacidad rentable y escalable al
+            mismo tiempo que automatiza las arduas tareas administrativas, como el aprovisionamiento de hardware, la
+            configuración de bases de datos, la implementación de parches y la creación de copias de seguridad. Los
+            siguientes son los pasos para poder enlazar a nuestro formulario dinámico creado anteriormente a una base de
+            datos usando este servicio:</p>
+        <ul>
+            <li>
+                <span>En la consola de AWS buscar el servicio RDB (Relational DataBase). <b>NOTA: TAMBIÉN SE PUEDE
+                    REALIZAR ESTE PROCEDIMIENTO CON UNA BASE DE DATOS NO RELACIONAL COMO MONGODB.</b></span>
+            </li>
+            <li>
+                <span>Ahora procederemos a crear una nueva base de datos haciendo click en create database. Acontinuación
+                    pueden elegir el método para crear una base de datos estándar o de fácil creación. En este tutorial
+                    se seguirá el estándar. Se selecciona la base de datos a usar, la versión y más adelante el nombre
+                    de la base de datos, el usuario y la contraseña para su acceso. <b>NOTA: PARA QUE SEA POSIBLE
+                    CONECTARSE DESDE LA MÁQUINA EC2, LA BASE DE DATOS DEBE TENER EL MISMO GRUPO DE SEGURIDAD QUE LA
+                    MÁQUINA.</b></span>
+            </li>
+            <li>
+                <span>Luego de haberla creado, accedemos a ella y copiamos el endpoint que nos permitirá la conexión.
+                    Ahora configuramos en nuestro proyecto dicha conexión para alamcenar los datos que necesitamos.</span>
+            </li>
+            <li>
+                <span>Después de haber verificado la conexión y que la base de datos ya almacene los datos ingresados en
+                    el formulario, entonces volvemos a general el <b>.JAR</b> de nuestro proyecto y lo subimos a la
+                    máquina EC2 como se indicó en el anterior tutorial.</span>
+            </li>
+            <li>
+                <span>Ahora nos conectamos por medio de ssh y arrancamos nuestro proyecto.</span>
+            </li>
+            <li>
+                <span>En seguida ya podemos acceder con la dirección IP pública o DNS público de nuestra máquina
+                    acompañado con el puerto correspondiente, llenar el formulario y nuestra base de datos ya debería
+                    tener los datos almacenados del formulario.</span>
+            </li>
+        </ul>
+        <p>Para un mayor entendimiento, puede ver el siguiente video tutorial:</p>
+        <div class="iframeTutorial">
+            <iframe width="700" height="393,75" src="https://www.youtube-nocookie.com/embed/o3sOstP2G10" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <p style="font-size: 15px;padding-top: 2.5%">Carlos Medina 2019 - Arquitectura Empresarial</p>
+</footer>
+</body>
+</html>

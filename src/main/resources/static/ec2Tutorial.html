@@ -1,0 +1,127 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>EC2 Tutorial</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/s3Tutorial.html">S3 Tutorial</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/ec2Tutorial.html">EC2 Tutorial<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dbTutorial.html">Base de Datos Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vpcTutorial.html">VPC Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/costosServiciosAWS">Costos Servicios AWS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row" style="padding-top: 5%;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="text-align: center;">
+            <h1>EC2 Tutorial</h1>
+            <br/>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <main>
+        <p>Amazon <b>Elastic Compute Cloud (Amazon EC2)</b> es un servicio web que proporciona capacidad informática en
+            la nube segura y de tamaño modificable. Está diseñado para simplificar el uso de la informática en la nube a
+            escala web para los desarrolladores. Los siguientes son los pasos para poder desplegar un formulario
+            dinámico usando este servicio:</p>
+        <ul>
+            <li>
+                <span>En la consola de AWS busco el servicio EC2. Al hacer click sobre él, se redireccionará hacia el
+                    escritorio EC2.</span>
+            </li>
+            <li><span>En seguida, haga click sobre Launch Instance y selecciona la imagen de una instancia de Amazon que
+                más desee y se ajuste a sus necesidades. En este caso seleccionaremos una máquina Linux (puede ser
+                Amazon Linux AMI o Ubuntu) que contiene lo necesario para realizar el despliegue de nuestro formulario
+                dinámico. <b>NOTA: PUEDE REQUERIR LA INSTALACIÓN DE COMPONENTES COMO MAVEN O UNA VERSIÓN SUPERIOR DE
+                    JAVA.</b></span>
+            </li>
+            <li>
+                <span>Ahora se selecciona la opción Free tier eligible que ya viene marcada por defecto y se selecciona
+                    review and launch.</span>
+            </li>
+            <li>
+                <span>En esa página se dirige a editar security group. Ahí se activa HTTP y HTTPS para permitir el
+                    tráfico web. Finalmente se da click en launch.</span>
+            </li>
+            <li>
+                <span>En la siguiente ventana se pedirá crear o usar un par de llaves para poder acceder a la instancia.
+                    Si no tiene una creada, cree un nuevo par con el nombre deseado y descargue las llaves
+                    almacenándolas en un sitio seguro.</span>
+            </li>
+            <li>
+                <span>Después de unos momentos el estado de nuestra instancia será running, de manera que ya es posible
+                    acceder a ella.</span>
+            </li>
+            <li>
+                <span>Ahora, debemos crear un nuevo proyecto que permita ejecutar un servicio web. Ahí crearemos los
+                    componentes necesarios para hacer un formulario dinámico.</span>
+            </li>
+            <li>
+                <span>Después de haber creado el proyecto y verificado que el formulario funciona correctamente,
+                    procedemos a conectarnos mediante sftp a nuestra máquina para cargar el proyecto o el <b>.JAR</b>
+                    respectivo. <b>NOTA: PARA REALIZAR ESTA CONEXIÓN DEBEMOS ESTAR SOBRE LA RUTA EN LA QUE SE ENCUENTRA
+                    NUESTRO PAR DE LLAVES</b></span>
+            </li>
+            <li>
+                <span>Después de haber subido el archivo a la máquina en AWS, procedemos a conectarnos mediante ssh y
+                    así ejecutar nuestro proyecto. <b>NOTA: EL PUERTO DONDE EL PROYECTO SERÁ DESPLEGADO DEBE COINCIDIR
+                    CON EL DEL GRUPO DE SEGURIDAD CONFIGURADO.</b></span>
+            </li>
+            <li>
+                <span>Finalmente, accedemos con la dirección IP pública o DNS público de nuestra máquina acompañado con
+                    el puerto correspondiente y nuestro formulario ya debería aparecer.</span>
+            </li>
+        </ul>
+        <p>Para un mayor entendimiento, puede ver el siguiente video tutorial:</p>
+        <div class="iframeTutorial">
+            <iframe width="700" height="393,75" src="https://www.youtube-nocookie.com/embed/zkrkhVd-c9g" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <p style="font-size: 15px;padding-top: 2.5%">Carlos Medina 2019 - Arquitectura Empresarial</p>
+</footer>
+</body>
+</html>

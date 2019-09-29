@@ -1,0 +1,30 @@
+.footer {
+    background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: lightgray;
+    width: 100%;
+    min-height: 100px;
+    text-align: center;
+}
+
+main > p {
+    text-align: justify;
+}
+
+main > ul > li {
+    list-style: decimal;
+    text-align: justify;
+    font-weight: bold;
+    line-height: 2.5;
+}
+
+main > ul > li > span {
+    font-weight: normal;
+    line-height: 1.5 !important;
+}
+
+.iframeTutorial {
+    text-align: center;
+    margin-bottom: 3%;
+}
